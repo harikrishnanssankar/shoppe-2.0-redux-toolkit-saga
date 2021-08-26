@@ -1,0 +1,45 @@
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Raleway', sans-serif;
+    padding: 25px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+.header__leftDiv{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+.header__leftDiv > i {
+    font-size: x-large;
+}
+
+.header__centerDiv{
+    display: flex;
+    column-gap: 20px;
+}
+.header__rightDiv{
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+.header__rightDiv > i{
+    font-size: larger;
+
+}
+
+.header__container > div > h3:hover, .header__centerDiv > h4:hover, .header__rightDiv > i:hover{
+    color: rgb(80, 80, 80);
+    cursor: pointer;
+}
+.header__link:hover{
+    color: rgb(80, 80, 80);
+}
+
+.header__link{
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,116 @@
+.productList__container {
+  display: flex;
+  flex-direction: column;
+}
+.productList__exclusive {
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  position: relative;
+}
+.productList__left {
+  width: 20%;
+  background-color: #f3b900;
+  height: 100vh;
+  z-index: 2;
+  box-shadow: 18px 0px 20px -10px #21212156;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.productList__left > h1 {
+  font-size: 135px;
+  word-wrap: break-word;
+  text-align: center;
+  letter-spacing: 12px;
+  font-family: "Roboto Slab", serif;
+}
+.productList__right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px 40px;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  row-gap: 10px;
+  column-gap: 50px;
+}
+.exclusive__productCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+}
+.exclusive__productCard:hover .exclusive__productImg {
+  transform: scale(1.2);
+  transition: ease-in 0.2s;
+}
+
+.exclusive__productCard17 {
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+.exclusive__productCard17 > .exclusive__productSubCard {
+  height: 500px;
+}
+.exclusive__productCard17 > .exclusive__productImg {
+  width: 250px;
+  top: 60px;
+}
+
+.exclusive__productImg {
+  width: 150px;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: 2;
+  transition: ease-out 0.2s;
+}
+.exclusive__productSubCard {
+  width: 100%;
+  height: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.371);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+.exclusive__productSubCard > h3 {
+  font-size: large;
+  z-index: 10;
+  font-family: "Raleway", sans-serif;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 400px;
+}
+
+.productList__collections {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(245, 222, 179, 0.748);
+  padding: 20px;
+  column-gap: 40px;
+}
+.productList__collections > h1 {
+  font-size: 190px;
+  color: white;
+  font-family: "Roboto Slab", serif;
+  -webkit-text-stroke-width: 8px;
+  -webkit-text-stroke-color: #f3ba0065;
+   letter-spacing: 20px;
+   padding-left: 20px;
+   position: absolute;
+   z-index: -2;
+}
+.productList__item{
+  margin-top: 60px;
+}

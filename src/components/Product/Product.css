@@ -1,0 +1,47 @@
+.product__cardContainer {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  padding: 20px;
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.product__cardContainer:hover .product__cardImg {
+    transform: scale(1.2);
+    transition: ease-in 0.2s;
+}
+
+.product__cardImg {
+  width: auto;
+  height: 60%;
+  max-width: 85%;
+  transition: ease-in 0.2s;
+}
+
+.product__cardContainer > h3 {
+    font-size: medium;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+    height: 15%;
+    align-self: flex-start;
+    
+}
+
+.product__cardContainer > h5 {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background-color: #f3b900;
+    padding: 5px 10px;
+    z-index: 9;
+}
+.product__cardContainer > h4 {
+    align-self: flex-start;
+}
+

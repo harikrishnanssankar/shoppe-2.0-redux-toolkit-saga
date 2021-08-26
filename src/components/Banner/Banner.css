@@ -1,0 +1,30 @@
+.banner__container{
+    height:100vh;
+    width: 100%;
+    background-image: url('../../assets/images/bgimg.jpg');
+    background-size: cover;
+    background-position-y: center;
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 5px;
+}
+.banner__container > h1{
+    width: 450px;
+    font-size: 55px;
+    padding-bottom: 20px;
+}
+.banner__container > h5 {
+    background-color: black;
+    color: yellow;
+    width: fit-content;
+    padding: 12px 35px;
+    transition: ease-in 0.2s;
+}
+.banner__container > h5:hover {
+    background-color: whitesmoke;
+    color: black;
+    transition: ease-in 0.2s;
+    cursor: pointer;
+}
