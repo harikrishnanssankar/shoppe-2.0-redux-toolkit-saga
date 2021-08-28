@@ -1,5 +1,5 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import { combineReducers, createStore } from "redux";
+import { combineReducers } from "redux";
 import createSagaMiddleware from "@redux-saga/core";
 import allProductSlice from "./slices/allProductSlice";
 import productSlice from "./slices/productSlice";

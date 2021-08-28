@@ -7,7 +7,6 @@ const allProductSlice = createSlice({
         getProducts() { },
         setProduct(state, action) {
             const products = action.payload;
-            console.log(products)
             return products
         },
     }

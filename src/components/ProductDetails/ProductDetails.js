@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useCallback } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -9,25 +10,35 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.product);
 
-  const fetchProduct = async () => {
-    const response = await axios
-      .get(`https://fakestoreapi.com/products/${id}`)
-      .catch((err) => {
-        console.log(err);
-      });
-    dispatch(selectedProduct(response.data));
-  };
+  // const fetchProduct = async () => {
+  //   const response = await axios
+  //     .get(`https://fakestoreapi.com/products/${id}`)
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  //   dispatch(selectedProduct(response.data));
+  // };
+
+  const fetchProduct = useCallback(
+    async () => {
+      const response = await axios
+        .get(`https://fakestoreapi.com/products/${id}`)
+        .catch((err) => {
+          console.log(err);
+        });
+      dispatch(selectedProduct(response.data));
+    }, [dispatch, id])
 
   useEffect(() => {
     fetchProduct();
     return () => {
       dispatch(removeSelectedProduct());
     };
-  }, []);
+  }, [dispatch, fetchProduct]);
   if (!product.title)
     return (
-      <div style={{position:'fixed', display:'flex', width:'100%', height:'100vh', alignItems:'center', justifyContent:'center'}} >
-        <h1 style={{fontFamily:'"Roboto Slab", serif'}} >Loading...</h1>
+      <div style={{ position: 'fixed', display: 'flex', width: '100%', height: '100vh', alignItems: 'center', justifyContent: 'center' }} >
+        <h1 style={{ fontFamily: '"Roboto Slab", serif' }} >Loading...</h1>
       </div>
     );
   return (

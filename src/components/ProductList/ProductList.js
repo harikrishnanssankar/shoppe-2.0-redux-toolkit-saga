@@ -1,23 +1,24 @@
-import axios from "axios";
-import { useCallback } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { getProducts, setProduct } from "../../redux/slices/allProductSlice";
+import { getProducts } from "../../redux/slices/allProductSlice";
 import Product from "../Product/Product";
 import "./ProductList.css";
 
 const ProductList = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProducts())
+  }, [dispatch]);
+  
   const products = useSelector((state) => state.allProducts);
-
   const exclusive = products.slice(15, 18);
   const collections = products
     .slice(0, products.length)
     .sort(() => Math.random() - 0.5)
     .slice(0, 6);
 
-  const dispatch = useDispatch();
   // const fetchProducts = useCallback(async () => {
   //   const response = await axios
   //     .get("https://fakestoreapi.com/products")
@@ -27,13 +28,6 @@ const ProductList = () => {
   //   dispatch(setProduct(response.data));
   //   console.log(response);
   // }, [dispatch]);
-
-  useEffect(() => {
-    // fetchProducts();
-    dispatch(getProducts())
-  }, [dispatch]);
-
-  console.log(products);
   return (
     <div className="productList__container">
       <div id="exclusive" className="productList__exclusive">
