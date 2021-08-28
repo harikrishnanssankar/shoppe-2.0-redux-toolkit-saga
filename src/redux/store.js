@@ -1,13 +1,22 @@
-import { createStore } from "redux";
-import reducers from "./reducers";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { combineReducers, createStore } from "redux";
+import createSagaMiddleware from "@redux-saga/core";
+import allProductSlice from "./slices/allProductSlice";
+import productSlice from "./slices/productSlice";
+import { watcherSaga } from "./sagas/rootSaga";
 
+const reducer = combineReducers({
+    allProducts: allProductSlice,
+    product:productSlice
+})
 
+const sagaMiddleware = createSagaMiddleware()
 
-const store = createStore(
-    reducers,
-    {},
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = configureStore({
+    reducer,
+    middleware: [...getDefaultMiddleware({thunk:false}), sagaMiddleware]
+})
 
+sagaMiddleware.run(watcherSaga)
 
 export default store;

@@ -17,7 +17,7 @@ const Header = () => {
     <div className="header__container">
       <div className="header__leftDiv" >
         <i className="bi bi-shop"></i>
-        <h3>Shoppe</h3>
+        <h3 onClick={()=> history.push('/')} >Shoppe</h3>
       </div>
       <div className="header__centerDiv">
         <Link
@@ -53,7 +53,7 @@ const Header = () => {
         >
           <h4>Collections</h4>
         </Link>
-        <h4>All Products</h4>
+        <h4 onClick={() => history.push('/allproducts')} >All Products</h4>
       </div>
       <div className="header__rightDiv">
         <i className="bi bi-search"></i>
