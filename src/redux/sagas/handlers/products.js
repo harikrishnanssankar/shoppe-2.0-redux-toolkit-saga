@@ -2,7 +2,7 @@ import { call, put } from "redux-saga/effects";
 import { setProduct } from "../../slices/allProductSlice";
 import { requestGetProduct } from "../requests/products";
 
-export function* handleGetProduct(action) {
+export function* handleGetProduct() {
   try {
     const response = yield call(requestGetProduct);
     const { data } = response;

@@ -7,7 +7,7 @@ import { watcherSaga } from "./sagas/rootSaga";
 
 const reducer = combineReducers({
     allProducts: allProductSlice,
-    product:productSlice
+    product: productSlice,
 })
 
 const sagaMiddleware = createSagaMiddleware()
